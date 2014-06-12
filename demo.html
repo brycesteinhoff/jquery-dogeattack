@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>much demo. so example.</title>
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="jquery.dogeattack.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				// Setup dogeattack on parent element
+				var dogeattack = $('body').dogeattack({
+
+					// OPTIONS BELOW ARE THE DEFAULTS
+
+					// Adverbs to be randomly paired with adjectives
+					adverbsForAdjectives: [
+						'so',
+						'much',
+						'such',
+						'very',
+						'quite'
+					],
+
+					// Pool of possible adjectives to use
+					possibleAdjectives: [
+						'hip',
+						'concern',
+						'scare',
+						'friendship',
+						'curious'
+					],
+
+					// Adjectives to always show (if maxPhrases is sufficient)
+					requiredAdjectives: [],
+
+					// Pool of possible phrases that do not get paired with adverbs
+					possiblePhrases: [
+						'plz'
+					],
+
+					// Phrases to always show (if maxPhrases is sufficient) that do not get paired with adverbs
+					requiredPhrases: [
+						'wow'
+					],
+
+					// Maximum number of phrases to show
+					maxPhrases: 8,
+
+					// Fade time in ms
+					fadeTime: 50,
+
+					// Length of time in ms
+					totalTime: 10000,
+
+					// Attributes to apply to wrapper (id, class, etc.)
+					attrs: {},
+
+					// Font size
+					fontSize: 48,
+
+					// Colors for phrases
+					colors: [
+						'red',
+						'green',
+						'orange',
+						'violet',
+						'aqua',
+						'yellow',
+						'slateblue',
+						'purple',
+						'pink',
+						'lime',
+						'fuchsia',
+						'gold',
+						'indigo'
+					],
+
+					// Image to use in the background
+					background: 'doge.jpg',
+
+					// Ratio of background (size in pixels)
+					backgroundSize: {
+						width: 675,
+						height: 506
+					},
+
+					// 'preserve' background ratio or 'stretch' to fill parent
+					ratio: 'preserve',
+
+					// Callback when attack begins
+					onAttack: function(wrapper) {},
+
+					// Callback when attack ends
+					onStop: function(wrapper) {}
+				});
+
+				// Trigger attack
+				$('.doge a').on('click', dogeattack.attack);
+			});
+		</script>
+
+		<style>
+			html,body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+
+			.doge {
+				padding-top: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="doge">
+			<a href="#">very doge attack. much click. wow.</a>
+		</div>
+	</body>
+
+</html>
